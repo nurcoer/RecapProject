@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jTUE72zo3EUZxQo7Yxvwl4f5vBrgPpa9+BN10xEAiVbaRWwUeOIt0eJEJcW6GbnzsrW7hirHK+DBHaiSgBA0hw==",
+  "success": true,
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
