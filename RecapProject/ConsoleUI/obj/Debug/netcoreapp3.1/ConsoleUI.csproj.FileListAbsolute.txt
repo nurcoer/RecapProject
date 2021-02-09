@@ -118,3 +118,5 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\C
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.pdb
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.genruntimeconfig.cache
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Core.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Core.pdb

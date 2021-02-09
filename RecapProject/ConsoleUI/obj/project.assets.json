@@ -1482,6 +1482,19 @@
           "bin/placeholder/Business.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11"
+        },
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1499,6 +1512,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -5633,6 +5649,11 @@
       "path": "../Business/Business.csproj",
       "msbuildProject": "../Business/Business.csproj"
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -5657,11 +5678,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectUniqueName": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
       "projectName": "ConsoleUI",
-      "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\ConsoleUI\\obj\\",
+      "outputPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\ConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5681,11 +5702,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\Business\\Business.csproj": {
-              "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\Business\\Business.csproj"
+            "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\Business\\Business.csproj": {
+              "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\Business\\Business.csproj"
             },
-            "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\DataAccess\\DataAccess.csproj"
+            "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\DataAccess\\DataAccess.csproj"
             }
           }
         }

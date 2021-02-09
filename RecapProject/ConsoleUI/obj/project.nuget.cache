@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "peBH8ETvNlK0bNYjKYePo90s0i7OaXNDgqfeSE5R+3iDd20ZWMv0Fphi0rC5ELQXq3rQ5jqGHtn0LbdvIyaj7g==",
+  "dgSpecHash": "VQOfUWoILU3yXAn0E8EnmyeuEtb9eFumTdOJxmhtSpLR5S8P13zWGrk53MUQ4mb85DoVLzhI906baO9NX3P62Q==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

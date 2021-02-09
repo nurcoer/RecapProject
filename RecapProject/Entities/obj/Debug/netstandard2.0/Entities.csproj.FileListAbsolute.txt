@@ -16,3 +16,6 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\E
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\Entities\obj\Debug\netstandard2.0\Entities.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\Entities\obj\Debug\netstandard2.0\Entities.pdb
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\Entities\bin\Debug\netstandard2.0\Core.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\Entities\bin\Debug\netstandard2.0\Core.pdb
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete

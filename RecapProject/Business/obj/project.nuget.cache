@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ds0E5pN3dt3u9dc9XTWfmAEHsmPG/RMGpzbBjDvYQV7lBgLUxQ99bJ76LjIJJVEI2rcll/5UfNY7viEmTN7oNQ==",
+  "dgSpecHash": "lzMIF2FxohWKAfphtLqP8tO0QfQB2T2c/9yC/KasArLDn7+ZUay1gn31XY+dW0dXaIL7+H1YgWWwT6ee9HyORg==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\Business\\Business.csproj",
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

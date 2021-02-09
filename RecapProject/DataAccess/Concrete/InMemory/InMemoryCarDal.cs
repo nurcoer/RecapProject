@@ -1,17 +1,17 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
     public class InMemoryCarDal : ICarDal
     {
         List<Car> _cars;
-        public InMemoryCarDal() 
+        public InMemoryCarDal()
         {
             //_cars = new List<Car> {
             //    new Car{ CarId = 1, BrandId = 1, ColorId = 1, DailyPrice = 1000, ModelYear = new DateTime(), Description = "Audi" },
@@ -48,6 +48,11 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public Car GetById(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetails> GetCarDetails()
         {
             throw new NotImplementedException();
         }
