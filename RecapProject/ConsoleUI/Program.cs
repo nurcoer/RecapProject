@@ -1,6 +1,7 @@
 ﻿using System;
 using Business.Concrete;
 using Businesss.Concrete;
+using Core.Utilities;
 using DataAccess.Concrete.EntityFrameWork;
 
 
@@ -32,6 +33,43 @@ namespace ConsoleUI
             //BrandUpdated();
             //BrandDeletedTest();
 
+            //--------------User Operation----------------
+
+           Console.WriteLine(AddUserTest());
+
+            //-------- Araç Kiralama
+            //Console.WriteLine(AddRental());// doğru
+
+
+
+        }
+
+        private static string AddUserTest()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            IResult result=userManager.Add(new Entities.Concrete.User
+            {
+                Id = 3,
+                LastName = "Cöer",
+                FirstName = "kadriye",
+                Email = "kadriyecoer@gmail.com",
+                Password = "1234"
+            });
+            return result.Message;
+        }
+
+        private static string AddRental()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            IResult result = rentalManager.Add(new Entities.Concrete.Rental
+            {
+                CustomerId = 1,
+                Id = 2,
+                CarId = 1,
+                ReturnDate = null,
+                RentDate = DateTime.Now.Date
+            });
+            return result.Message;
         }
 
         private static void BrandDeletedTest()
@@ -67,7 +105,7 @@ namespace ConsoleUI
         private static void BrandAddedTest()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var item in brandManager.GetAll())
+            foreach (var item in brandManager.GetAll().Data)
             {
                 Console.WriteLine(item.BrandName);
             }
@@ -106,7 +144,7 @@ namespace ConsoleUI
         private static void ColorGetAllTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            foreach (var item in colorManager.GetAll())
+            foreach (var item in colorManager.GetAll().Data)
             {
                 Console.WriteLine(item.ColorName);
             }
@@ -115,7 +153,7 @@ namespace ConsoleUI
         private static void GetCarsColorIdTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetCarsByColorId(2))
+            foreach (var item in carManager.GetCarsByColorId(2).Data)
             {
                 Console.WriteLine(item.CarName + " " + item.ColorId);
             }
@@ -124,7 +162,7 @@ namespace ConsoleUI
         private static void GetCarsBrandIdTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetCarsByBrandId(1))
+            foreach (var item in carManager.GetCarsByBrandId(1).Data)
             {
                 Console.WriteLine(item.CarName + " " + item.BrandId);
             }
@@ -133,7 +171,7 @@ namespace ConsoleUI
         private static void GetCarDetailTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetCarDetails())
+            foreach (var item in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine(item.CarName + " " + item.BrandName);
             }
@@ -187,7 +225,7 @@ namespace ConsoleUI
         private static void CarGetAll()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetAll())
+            foreach (var item in carManager.GetAll().Data)
             {
                 Console.WriteLine(item.CarName);
             }

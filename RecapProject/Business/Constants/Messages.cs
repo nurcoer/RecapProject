@@ -16,5 +16,15 @@ namespace Business.Constants
         public static string GetCarDetailMessage = "Araç Detayı Getirildi";
         public static string GetCarsByBrandId = "Markaya Ait Araçlar Getirildi";
         public static string GetCarsByColorId = "Renkte Araçlar Getirildi";
+
+        public static string AddedUser = "Kullanıcı Eklendi";
+        public static string UpdatedUser = "Kullanıcı Güncellendi";
+        public static string DeletedUser = "Kullanıcı Silindi";
+
+        public static string AddedRental  = "Kiralama Bilgileri Alındı";
+        public static string ErrorAddedRental  = "Kiralama Bilgileri Yanlış";
+
+        public static string UpdatedRental = "Kiralama Bilgileri Güncellendi";
+        public static string DeletedRental = "Kiralanan Araç Silindi";
     }
 }
