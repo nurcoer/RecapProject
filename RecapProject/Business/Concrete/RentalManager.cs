@@ -1,11 +1,9 @@
 ﻿using Business.Abstract;
 using Business.Constants;
-using Core.Utilities;
+using Core.Results.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {

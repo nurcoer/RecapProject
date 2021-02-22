@@ -1,11 +1,9 @@
-﻿using Core.Utilities;
+﻿using Core.Results.Utilities;
 using Entities.Concrete;
 using Entities.DTOs;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Businesss.Abstract
+namespace Business.Abstract
 {
     public interface ICarService
     {

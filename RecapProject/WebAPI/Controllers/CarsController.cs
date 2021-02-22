@@ -1,4 +1,5 @@
-﻿using Businesss.Abstract;
+﻿
+using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -51,7 +52,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = _carService.GetAll();

@@ -51,7 +51,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = _brandService.GetAll();

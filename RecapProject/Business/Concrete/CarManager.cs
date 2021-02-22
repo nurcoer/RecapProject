@@ -1,6 +1,10 @@
-﻿using Business.Constants;
-using Businesss.Abstract;
-using Core.Utilities;
+﻿
+using Business.Abstract;
+using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
+using Core.Results.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -8,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Businesss.Concrete
+namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
@@ -18,22 +22,13 @@ namespace Businesss.Concrete
             _carDal = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-
-            if (car.CarName.Length < 2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
-            else if (car.DailyPrice <= 0)
-            {
-                return new ErrorResult(Messages.ProductDailyPriceInvalid);
-            }
-            else
-            {
+            //validation buraya gelen ürünün uymaı gereken kurallar. --> fluentValidation
+            //business code kullanıcının bu işlemi yapmaya uygun olup olmadığı.
                 _carDal.Add(car);
                 return new SuccessResult(Messages.ProductAdded);
-            }
         }
 
         public IResult Delete(Car car)

@@ -1,7 +1,5 @@
 using Business.Abstract;
 using Business.Concrete;
-using Businesss.Abstract;
-using Businesss.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFrameWork;
 using Microsoft.AspNetCore.Builder;
@@ -31,25 +29,14 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
 
-            services.AddSingleton<ICarService, CarManager>();
-            services.AddSingleton<ICarDal, EfCarDal>();
+            //AOP
+            //Autofac, ninject, castelwindsor, structureMap, ligthinject, DryInject --> IýC Container
+            //Postsharp --- paralý benim önceki projemde var olan.
+             services.AddControllers();
 
-            services.AddSingleton<IBrandService, BrandManager>();
-            services.AddSingleton<IBrandDal, EfBrandDal>();
-
-            services.AddSingleton<IColorService, ColorManager>();
-            services.AddSingleton<IColorDal, EfColorDal>();
-
-            services.AddSingleton<IRentalService, RentalManager>();
-            services.AddSingleton<IRentalDal, EfRentalDal>();
-
-            services.AddSingleton<ICustomerService, CustomerManager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-
-            services.AddSingleton<IUserService, UserManager>();
-            services.AddSingleton<IUserDal, EfUserDal>();
+            //services.AddSingleton<ICarService, CarManager>();
+            //services.AddSingleton<ICarDal, EfCarDal>();
 
         }
 

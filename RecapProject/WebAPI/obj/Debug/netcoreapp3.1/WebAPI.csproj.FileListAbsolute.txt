@@ -66,3 +66,8 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\W
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
