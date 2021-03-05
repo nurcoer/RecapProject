@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -22,10 +23,6 @@ namespace Business.Constants
         public static string UpdatedUser = "Kullanıcı Güncellendi";
         public static string DeletedUser = "Kullanıcı Silindi";
 
-        internal static string Added(CarImage carImage)
-        {
-            throw new NotImplementedException();
-        }
 
         public static string AddedRental  = "Kiralama Bilgileri Alındı";
         public static string ErrorAddedRental  = "Kiralama Bilgileri Yanlış";
@@ -36,7 +33,16 @@ namespace Business.Constants
         public static string AddedCarImage = "Araç resimleri eklendi";
         public static string DeletedCarImage = "Araç resimleri silindi";
         public static string UpdatedCarImage = "araç resimleri güncellendi";
+        public static string MaxCarImage = "Bir araca en fazla tane 5 tane resim ekleyebilirsiniz.";
 
-        public static string MaxCarImage { get; internal set; }
+        public static string AuthorizationDenied = "Yetkiniz yok";
+
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string PasswordError = "Şifre hatalı";
+        public static string SuccessfulLogin = "Sisteme giriş başarılı";
+        public static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
+        public static string UserRegistered = "Kullanıcı başarıyla kaydedildi";
+        public static string AccessTokenCreated = "Access token başarıyla oluşturuldu";
+
     }
 }

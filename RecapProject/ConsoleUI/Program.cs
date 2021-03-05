@@ -1,6 +1,6 @@
 ﻿using System;
 using Business.Concrete;
-using Businesss.Concrete;
+using Core.Results.Utilities;
 using Core.Utilities;
 using DataAccess.Concrete.EntityFrameWork;
 
@@ -46,16 +46,17 @@ namespace ConsoleUI
 
         private static string AddUserTest()
         {
-            UserManager userManager = new UserManager(new EfUserDal());
-            IResult result=userManager.Add(new Entities.Concrete.User
-            {
-                Id = 3,
-                LastName = "Cöer",
-                FirstName = "kadriye",
-                Email = "kadriyecoer@gmail.com",
-                Password = "1234"
-            });
-            return result.Message;
+            //UserManager userManager = new UserManager(new EfUserDal());
+            //IResult result=userManager.Add(new Core.Entities.Concrete.User
+            //{
+            //    Id = 3,
+            //    LastName = "Cöer",
+            //    FirstName = "kadriye",
+            //    Email = "kadriyecoer@gmail.com",
+            //    Password = "1234"
+            //});
+            //return result.Message;
+            return "başarılı";
         }
 
         private static string AddRental()

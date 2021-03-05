@@ -34,21 +34,21 @@ namespace Business.Concrete
             carImage.ImagePath = FileOperations.AddFile(formFile);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
-            return new SuccessResult(Messages.Added(carImage));
+            return new SuccessResult(Messages.AddedCarImage);
         }
 
         public IResult Delete(int id)
         {
             CarImage carImage = _carImageDal.GetById(c => c.Id == id);
             _carImageDal.Delete(carImage);
-            return new SuccessResult(Messages.Added(carImage));
+            return new SuccessResult(Messages.DeletedCarImage);
         }
 
         public IResult Update(int id)
         {
             CarImage carImage = _carImageDal.GetById(c => c.Id == id);
             _carImageDal.Update(carImage);
-            return new SuccessResult(Messages.Added(carImage));
+            return new SuccessResult(Messages.UpdatedCarImage);
         }
 
         public IDataResult<List<CarImage>> GetAll()

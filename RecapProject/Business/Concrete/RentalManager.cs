@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Results.Utilities;
 using DataAccess.Abstract;
@@ -15,7 +16,7 @@ namespace Business.Concrete
         {
             _rentalDal = rentalDal;
         }
-
+        [SecuredOperation("admin, editor")]
         public IResult Add(Rental rental)
         {
                 if (rental.ReturnDate != null)

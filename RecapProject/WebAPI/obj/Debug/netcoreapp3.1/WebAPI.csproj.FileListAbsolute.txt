@@ -73,3 +73,4 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\W
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

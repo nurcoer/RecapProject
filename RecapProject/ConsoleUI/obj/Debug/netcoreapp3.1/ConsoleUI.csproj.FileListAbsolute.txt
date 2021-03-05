@@ -120,3 +120,11 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\C
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\ReCapProject\RecapProject\ConsoleUI\obj\Debug\netcoreapp3.1\ConsoleUI.genruntimeconfig.cache
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Core.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Core.pdb
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Autofac.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
