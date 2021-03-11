@@ -128,3 +128,7 @@ D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\C
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.WebUtilities.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.ObjectPool.dll
+D:\asp.net\Yazılım Geliştirici Yetiştirme Kampı\RecapProject\RecapProject\ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.Net.Http.Headers.dll

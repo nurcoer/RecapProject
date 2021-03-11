@@ -1,6 +1,9 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.Results.Utilities;
 using Core.Utilities.Business;
@@ -23,6 +26,9 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
+        [SecuredOperation("product.add,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
+        [TransactionScopeAspect]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(CarImage carImage, IFormFile formFile)
         {
@@ -36,6 +42,9 @@ namespace Business.Concrete
             _carImageDal.Add(carImage);
             return new SuccessResult(Messages.AddedCarImage);
         }
+        [SecuredOperation("product.add,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
+        [TransactionScopeAspect]
 
         public IResult Delete(int id)
         {
@@ -44,23 +53,28 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedCarImage);
         }
 
+        [SecuredOperation("product.add,admin")]
+        [CacheRemoveAspect("ICarImageService.Get")]
+        [TransactionScopeAspect]
+        [ValidationAspect(typeof(CarImageValidator))]
+
         public IResult Update(int id)
         {
             CarImage carImage = _carImageDal.GetById(c => c.Id == id);
             _carImageDal.Update(carImage);
             return new SuccessResult(Messages.UpdatedCarImage);
         }
-
+        [CacheAspect]
         public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
-
+        [CacheAspect]
         public IDataResult<CarImage> GetById(int carImageId)
         {
             return new SuccessDataResult<CarImage>(_carImageDal.GetById(c => c.Id == carImageId));
         }
-
+        [CacheAspect]
         public IDataResult<List<CarImage>> GetCarImages(int carId)
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(c => c.CarId == carId));

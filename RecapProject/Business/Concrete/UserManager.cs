@@ -1,5 +1,8 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Entities.Concrete;
 using Core.Results.Utilities;
 using DataAccess.Abstract;
@@ -17,23 +20,30 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
+        [SecuredOperation("admin, editor")]
+        [CacheRemoveAspect("IUserService.Get")]
+        [TransactionScopeAspect]
         public IResult Add(User user)
         {
             _userDal.Add(user);
             return new SuccessResult(Messages.AddedUser);
         }
-
+        [SecuredOperation("admin, editor")]
+        [CacheRemoveAspect("IUserService.Get")]
+        [TransactionScopeAspect]
         public IResult Delete(User user)
         {
             _userDal.Delete(user);
             return new SuccessResult(Messages.DeletedUser);
         }
-
+        [CacheAspect]
         public IDataResult<List<User>> GetAll()
         {
            return new SuccessDataResult<List<User>>( _userDal.GetAll());
         }
-
+        [SecuredOperation("admin, editor")]
+        [CacheRemoveAspect("IUserService.Get")]
+        [TransactionScopeAspect]
         public IResult Update(User user)
         {
             _userDal.Update(user);

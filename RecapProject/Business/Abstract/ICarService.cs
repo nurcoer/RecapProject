@@ -14,6 +14,7 @@ namespace Business.Abstract
         IDataResult<List<Car>> GetCarsByBrandId(int Id);
         IDataResult<List<Car>> GetCarsByColorId(int Id);
         IDataResult<List<CarDetails>> GetCarDetails();
-
+        //aynı anda yapılan işlemleri iptal etmek için kullnılıyor.
+        IResult AddTransactionTest(Car car);
     }
 }
