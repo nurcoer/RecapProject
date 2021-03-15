@@ -6,6 +6,7 @@ using Core.Aspects.Autofac.Transaction;
 using Core.Results.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -51,6 +52,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
         }
 
+        public IDataResult<List<RentalDetails>> GetRentalDetails()
+        {
+            return new SuccessDataResult<List<RentalDetails>>(_rentalDal.GetRentalDetails());
+        }
+
         [SecuredOperation("admin, editor")]
         [CacheRemoveAspect("IRentalService.Get")]
         [TransactionScopeAspect]
@@ -59,5 +65,6 @@ namespace Business.Concrete
             _rentalDal.Update(rental);
             return new SuccessResult(Messages.UpdatedRental);
         }
+
     }
 }
