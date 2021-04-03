@@ -11,9 +11,11 @@ namespace Business.Abstract
         IResult Delete(Car car);
         IDataResult<List<Car>> GetAll();
         IResult Add(Car car);
-        IDataResult<List<Car>> GetCarsByBrandId(int Id);
-        IDataResult<List<Car>> GetCarsByColorId(int Id);
-        IDataResult<List<CarDetails>> GetCarDetails();
+        IDataResult<List<CarDetailsDto>> GetCarsByBrandId(int Id);
+        IDataResult<List<CarDetailsDto>> GetCarsByColorId(int Id);
+        IDataResult<List<CarDetailsDto>> GetCarDetails();
+        IDataResult<List<CarDetailsDto>> GetCarDetail(int id);
+
         //aynı anda yapılan işlemleri iptal etmek için kullnılıyor.
         IResult AddTransactionTest(Car car);
     }

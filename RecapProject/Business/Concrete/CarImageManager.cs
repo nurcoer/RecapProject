@@ -26,11 +26,11 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
-        [SecuredOperation("product.add,admin")]
-        [CacheRemoveAspect("ICarImageService.Get")]
-        [TransactionScopeAspect]
-        [ValidationAspect(typeof(CarImageValidator))]
-        public IResult Add(CarImage carImage, IFormFile formFile)
+        //[SecuredOperation("product.add,admin")]
+        //[CacheRemoveAspect("ICarImageService.Get")]
+        //[TransactionScopeAspect]
+        //[ValidationAspect(typeof(CarImageValidator))]
+        public IResult Add(IFormFile formFile, CarImage carImage )
         {
             IResult result = BusinessRules.Run(CheckIfMaxCarImage(carImage.CarId));
             if (result != null)

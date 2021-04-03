@@ -1,0 +1,55 @@
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let image of carImages; let i = index"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      attr.data-bs-slide-to="{{ i }}"
+      [class]="getButtonClass(image)"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div *ngFor="let image of carImages" [class]="getCurrentImageClass(image)">
+      <img
+        src="{{ imageBasePath }}{{ image.imagePath }}"
+        class="d-block w-100"
+        width="640"
+        height="480"
+        alt="Image"
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div>
+  <ul *ngFor="let car of carDetail" class="list-group list-group-flush">
+    <li class="list-group-item">Name: {{ car.carName }}</li>
+    <li class="list-group-item">Brand: {{ car.brandName }}</li>
+    <li class="list-group-item">Color: {{ car.colorName }}</li>
+    <li class="list-group-item">Daily Price: {{ car.dailyPrice }}</li>
+  </ul>
+</div>

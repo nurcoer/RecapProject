@@ -14,7 +14,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 {
     public class EfCarDal : EfEntityRepositaryBase<Car, CarContext>, ICarDal
     {
-        public List<CarDetails> GetCarDetails()
+        public List<CarDetailsDto> GetCarDetails(Expression<Func<CarDetailsDto, bool>> filter = null)
         {
             using (CarContext context=new CarContext())
             {
@@ -23,14 +23,22 @@ namespace DataAccess.Concrete.EntityFrameWork
                              on c.BrandId equals b.BrandId
                              join col in context.Colors
                              on c.ColorId equals col.ColorId
-                             select new CarDetails
+                             let firstImage = context.CarImages.Where(ci => ci.CarId == c.CarId).FirstOrDefault()
+                             select new CarDetailsDto
                              {
+                                 CarId = c.CarId,
+                                 BrandId = b.BrandId,
+                                 ColorId = col.ColorId,
                                  ColorName = col.ColorName,
                                  CarName = c.CarName,
                                  BrandName = b.BrandName,
-                                 DailyPrice = c.DailyPrice
+                                 DailyPrice = c.DailyPrice,
+                                 ImagePath = firstImage.ImagePath
                              };
-                return result.ToList();
+
+                return filter == null
+                     ? result.ToList()
+                     : result.Where(filter).ToList();
             }
             
         }

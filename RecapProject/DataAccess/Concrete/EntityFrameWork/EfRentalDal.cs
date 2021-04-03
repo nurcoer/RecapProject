@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 {
     public class EfRentalDal : EfEntityRepositaryBase<Rental, CarContext>, IRentalDal
     {
-        public List<RentalDetails> GetRentalDetails()
+        public List<RentalDetailsDto> GetRentalDetails()
         {
             using (CarContext context = new CarContext())
             {
@@ -20,7 +20,7 @@ namespace DataAccess.Concrete.EntityFrameWork
                              join b in context.Brands on c.BrandId equals b.BrandId
                              join cu in context.Customers on r.CustomerId equals cu.Id
                              join u in context.Users on cu.UserId equals u.Id
-                             select new RentalDetails
+                             select new RentalDetailsDto
                              {
                                  RentalId =r.Id,
                                  BrandName = b.BrandName,

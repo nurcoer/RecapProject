@@ -52,9 +52,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
         }
 
-        public IDataResult<List<RentalDetails>> GetRentalDetails()
+        public IDataResult<List<RentalDetailsDto>> GetRentalDetails()
         {
-            return new SuccessDataResult<List<RentalDetails>>(_rentalDal.GetRentalDetails());
+            return new SuccessDataResult<List<RentalDetailsDto>>(_rentalDal.GetRentalDetails());
         }
 
         [SecuredOperation("admin, editor")]

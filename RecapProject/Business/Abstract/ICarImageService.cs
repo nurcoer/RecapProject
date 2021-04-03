@@ -10,9 +10,9 @@ namespace Business.Abstract
     public interface ICarImageService
     {
         IDataResult<List<CarImage>> GetAll();
-        IDataResult<List<CarImage>> GetCarImages(int carId);
+        IDataResult<List<CarImage>> GetCarImages(int carId); 
         IDataResult<CarImage> GetById(int carImage);
-        IResult Add(CarImage carImage, IFormFile formFile);
+        IResult Add(IFormFile formFile, CarImage carImage);
         IResult Delete(int id);
         IResult Update(int id);
     }
