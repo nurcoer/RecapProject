@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'RentACar'; //type save ts yazılımı
-  
+  user: string = "kadriyenurcöer";
 }

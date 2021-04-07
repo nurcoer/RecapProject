@@ -19,7 +19,7 @@ export class CarDetailComponent implements OnInit {
   imageBasePath = 'http://localhost:50906//images/';
 
   constructor(
-    private CarImagesService: CarImagesService,
+    private carImagesService: CarImagesService,
     private carService: CarService,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -35,7 +35,7 @@ export class CarDetailComponent implements OnInit {
   }
 
   getCarImages(carId: number) {
-    this.CarImagesService.getCarImages(carId).subscribe((response) => {
+    this.carImagesService.getCarImages(carId).subscribe((response) => {
       this.carImages = response.data;
       this.dataLoaded = true;
     });
@@ -53,5 +53,7 @@ export class CarDetailComponent implements OnInit {
       this.dataLoaded=true;
     });
   }
+
+  
 
 }

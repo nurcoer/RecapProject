@@ -16,10 +16,11 @@
       <div class="col-md-4">
         <img
           class="carImage d-block w-100"
-          src="{{ imageBasePath }}{{getCarImage(car)}}"
+          src="{{ imageBasePath }}{{car?car.imagePath:'default.jpg'}}"
           alt="Resim bulunamadı"
         />
       </div>
+     
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{ car.carName }}</h5>
@@ -30,5 +31,6 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>

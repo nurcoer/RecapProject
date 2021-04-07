@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Car } from 'src/app/models/car/car';
 import { CarDetail } from 'src/app/models/carDetail/carDetail';
+
 import { CarService } from 'src/app/services/Car/car.service';
-import { ActivatedRoute } from '@angular/router';
+
+
 
 //axios,fetch
 @Component({
@@ -55,24 +59,18 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+
   getCarsByColorId(colorId: number) {
     this.carService.getCarsByColorId(colorId).subscribe((response) => {
       this.carDetails = response.data;
       this.dataLoaded = true;
     });
   }
+
   getCarsDetail() {
     this.carService.getCarsDetail().subscribe((response) => {
       this.carDetails = response.data;
       this.dataLoaded = true;
     });
-  }
-
-  getCarImage(car: CarDetail) {
-    if (car.imagePath) {
-      return car.imagePath;
-    } else {
-      return 'default.jpg';
-    }
   }
 }

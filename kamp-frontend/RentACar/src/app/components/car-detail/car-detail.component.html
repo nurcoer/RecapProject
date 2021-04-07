@@ -23,5 +23,14 @@
     <li class="list-group-item">Günlük Ücreti: {{ cardetail.dailyPrice }}</li>
     <li class="list-group-item">Yılı : {{ car.modelYear}}</li>
     <li class="list-group-item">Açıklaması : {{ car.description}}</li>
+   
+    <div style="margin: auto;">
+      <app-rental [car] = 'cardetail'></app-rental>
+    </div>
   </ul>
+  
+  
 </div>
+
+
+

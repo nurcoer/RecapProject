@@ -19,7 +19,7 @@ namespace Business.Concrete
         {
             _rentalDal = rentalDal;
         }
-        [SecuredOperation("admin, editor")]
+        //[SecuredOperation("admin, editor")]
         [CacheRemoveAspect("IRentalService.Get")]
         [TransactionScopeAspect]
         public IResult Add(Rental rental)
@@ -50,6 +50,12 @@ namespace Business.Concrete
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
+        }
+
+        public IDataResult<Rental> GetById(int id)
+        {
+
+            return new SuccessDataResult<Rental>(_rentalDal.GetById(r => r.CarId == id), Messages.GetCarsByBrandId);
         }
 
         public IDataResult<List<RentalDetailsDto>> GetRentalDetails()
