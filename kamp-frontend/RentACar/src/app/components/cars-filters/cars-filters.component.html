@@ -1,0 +1,28 @@
+<div class="list-group">
+  <div class="list-group-item active">Filtrele</div>
+  <div>
+    <div class="col col-11 selectOptions">
+      <select [(ngModel)]="currentBrand " class="form-select">
+        <option [value]="undefined" disabled selected>Marka Seçiniz</option>
+        <option
+          *ngFor="let brand of brands"
+          [value]="brand.brandName"
+        >
+          {{ brand.brandName }}
+        </option>
+      </select>
+    </div>
+    <div class="col col-11 selectOptions">
+      <select [(ngModel)]="currentColor"  class="form-select">
+        <option [value]="undefined" disabled selected>Renk Seçiniz</option>
+        <option
+          *ngFor="let color of colors"
+          [value]="color.colorName"
+        >
+          {{ color.colorName }}
+        </option>
+      </select>
+    </div>
+    <button class="button button1" [routerLink]="setRouter()">Ara</button>
+  </div>
+</div>

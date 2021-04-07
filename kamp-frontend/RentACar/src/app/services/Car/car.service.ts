@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Car } from 'src/app/models/car/car';
 import { CarDetail } from 'src/app/models/carDetail/carDetail';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,20 +15,21 @@ export class CarService {
   //private bu classta kullanımını sağlar başka classtan erişim engeli koyar.
   constructor(private httpClient: HttpClient) { }
 
+ getCarsDetail():Observable<ListResponseModel<CarDetail>> {
+    let newPath= this.apiUrl+'cars/GetCarDetails';
+    return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
+  }
 
+  getCar(carId:number):Observable<SingleResponseModel<Car>> { 
 
-  getCars():Observable<ListResponseModel<Car>> { 
-
-    let newPath= this.apiUrl+'cars/getall';
+    let newPath= this.apiUrl+'cars/GetById?id='+carId;
     //js observable tasarım desenine ihtiyaç duyar
-    //subscribe = buna subscribe olmak isteyen kim compnewPath);
-    return this.httpClient.get<ListResponseModel<Car>>(newPath);
+    //subscribe = buna subscribe olmak isteyen kim componenet );
+    return this.httpClient.get<SingleResponseModel<Car>>(newPath);
   }
 
   getCarsByBrandId(brandId:number):Observable<ListResponseModel<CarDetail>> { 
     let newPath= this.apiUrl+'cars/GetCarsByBrandId?id='+brandId;
-    //js observable tasarım desenine ihtiyaç duyar
-    //subscribe = buna subscribe olmak isteyen kim component
     return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
   }
 
@@ -36,13 +38,11 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
   }
 
-  getCarsDetail():Observable<ListResponseModel<CarDetail>> {
-    let newPath= this.apiUrl+'cars/GetCarDetails';
-    return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
-  }
+ 
 
   getCarDetail(carId:number):Observable<ListResponseModel<CarDetail>> {
     let newPath= this.apiUrl+'cars/GetCarDetail?id='+carId;
-    return this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
-  }
+    return   this.httpClient.get<ListResponseModel<CarDetail>>(newPath);
+  } 
 }
+

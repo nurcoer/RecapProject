@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarDetail } from 'src/app/models/carDetail/carDetail';
+import { Car } from 'src/app/models/car/car';
 import { CarService } from 'src/app/services/Car/car.service';
 import { CarImagesService } from 'src/app/services/carImages/car-images.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,8 +12,9 @@ import { CarImage } from 'src/app/models/carDetail/carImages';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  carDetail: CarDetail[] = [];
+  carDetail: CarDetail[]= [];
   carImages: CarImage[] = [];
+  car: Car;
   dataLoaded = false;
   imageBasePath = 'http://localhost:50906//images/';
 
@@ -27,6 +29,7 @@ export class CarDetailComponent implements OnInit {
       if (params['carId']) {
         this.getCarDetail(params['carId']);
         this.getCarImages(params['carId']);
+        this.getCar(params['carId'])
       }
     });
   }
@@ -44,18 +47,11 @@ export class CarDetailComponent implements OnInit {
     });
   }
 
-  getCurrentImageClass(image: CarImage) {
-    if (image == this.carImages[0]) {
-      return 'carousel-item active';
-    } else {
-      return 'carousel-item';
-    }
+  getCar(carId: number){
+    this.carService.getCar(carId).subscribe((response) => {
+      this.car = response.data;
+      this.dataLoaded=true;
+    });
   }
-  getButtonClass(image: CarImage) {
-    if (image == this.carImages[0]) {
-      return 'active';
-    } else {
-      return '';
-    }
-  }
+
 }

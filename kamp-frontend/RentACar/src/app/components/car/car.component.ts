@@ -16,57 +16,63 @@ import { ActivatedRoute } from '@angular/router';
 export class CarComponent implements OnInit {
   cars: Car[] = [];
   carDetails: CarDetail[] = [];
-  dataLoaded=false;
-  currentCar:Car;
+  dataLoaded = false;
+  currentCar: Car;
+  filterText: string;
+  filterColor: string;
+  filterBrand: string;
+  imageBasePath = 'http://localhost:50906//images/';
 
   //mevcut rooute değişen değer brandId
-  constructor(private carService: CarService,
-  private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private carService: CarService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      if(params["brandId"]){
-          this.getCarsByBrandId(params["brandId"]);
-      }else if(params["colorId"]){
-          this.getCarsByColorId(params["colorId"]);
-      }else{
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['brandId']) {
+        this.getCarsByBrandId(params['brandId']);
+      } else if (params['colorId']) {
+        this.getCarsByColorId(params['colorId']);
+      } else if (params['brandId'] && params['colorId']) {
+      } else {
         this.getCarsDetail();
+        if (params['filterText']) {
+          this.filterText = params['filterText'];
+        }
+        if (params['brand'] && params['color']) {
+          this.filterColor = params['color'];
+          this.filterBrand = params['brand'];
+        }
       }
-    })
+    });
   }
- 
-  getAll(){
-     this.carService.getCars().subscribe((response)=>{
-      this.cars = response.data;
-      this.dataLoaded=true;
-    })
-  }
-  getCarsByBrandId(brandId:number){
-     this.carService.getCarsByBrandId(brandId).subscribe((response)=>{
+
+  getCarsByBrandId(brandId: number) {
+    this.carService.getCarsByBrandId(brandId).subscribe((response) => {
       this.carDetails = response.data;
-      this.dataLoaded=true;
-    })
+      this.dataLoaded = true;
+    });
   }
-  getCarsByColorId(colorId:number){
-     this.carService.getCarsByColorId(colorId).subscribe((response)=>{
+  getCarsByColorId(colorId: number) {
+    this.carService.getCarsByColorId(colorId).subscribe((response) => {
       this.carDetails = response.data;
-      this.dataLoaded=true;
-    })
+      this.dataLoaded = true;
+    });
   }
-  getCarsDetail(){
-    this.carService.getCarsDetail().subscribe((response)=>{
+  getCarsDetail() {
+    this.carService.getCarsDetail().subscribe((response) => {
       this.carDetails = response.data;
-      this.dataLoaded=true;
-    })
+      this.dataLoaded = true;
+    });
   }
 
-  setCurrentCar(car:Car){
-
+  getCarImage(car: CarDetail) {
+    if (car.imagePath) {
+      return car.imagePath;
+    } else {
+      return 'default.jpg';
+    }
   }
-  getCurrentCarClass(car:Car){
-
-  }
-  
-  
-} 
-
+}

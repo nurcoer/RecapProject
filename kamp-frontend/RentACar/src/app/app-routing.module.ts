@@ -9,8 +9,11 @@ const routes: Routes = [
   {path: 'cars',component:CarComponent},
   {path: 'cars/brand/:brandId',component:CarComponent},
   {path: 'cars/color/:colorId',component:CarComponent},
-  {path: 'cars/carDetails/:carId',component:CarDetailComponent}
+  {path: 'cars/carDetails/:carId',component:CarDetailComponent},
+  {path: 'cars/:filterText',component:CarComponent},
+  {path: 'cars/:brand/:color',component:CarComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
