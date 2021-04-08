@@ -25,12 +25,13 @@
             </div>
           </div>
           <div class="form-group row mb-2">
-            <label for="example-date-input" class="col-4 col-form-label">Müşteri</label>
-            <div class="col-8">
-              <select class="form-select" [(ngModel)]="customerId">
+            <label for="example-date-input" class="col-4 col-form-label">Müşteri </label>
+            <div class="col-8 selectOptions" >
+              <select   class="form-select" [(ngModel)]="customerId" >
                 <option
-                  [ngValue]="customer.customerId"
-                  *ngFor="let customer of customers">
+                   *ngFor="let customer of customers"
+                   [ngValue]="customer.id"
+                >
                   {{ customer.companyName }}
                 </option>
               </select>

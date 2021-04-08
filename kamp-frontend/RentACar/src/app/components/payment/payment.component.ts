@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/carDetail/carDetail';
 import { Card } from 'src/app/models/card/card';
 import { Customer } from 'src/app/models/customer/customer';
@@ -34,9 +34,9 @@ export class PaymentComponent implements OnInit {
     private carService: CarService,
     private customerService: CustomerService,
     private router: Router,
-    // private toastrService : ToastrService,
+    private toastrService : ToastrService,
     private rentalService: RentalService,
-    private cardService: CardService
+    private cardService: CardService,
   ) {}
 
   ngOnInit(): void {
@@ -51,11 +51,13 @@ export class PaymentComponent implements OnInit {
   }
   getCustomerDetailById(customerId: number) {
     this.customerService.getCustomerById(customerId).subscribe((response) => {
-      this.customer = response.data[0];
+      
+      this.customer = response.data;
     });
   }
   getCarDetail() {
     this.carService.getCarDetail(this.rental.carId).subscribe((response) => {
+    
       this.cars = response.data[0];
       this.paymentCalculator();
     });
@@ -71,16 +73,16 @@ export class PaymentComponent implements OnInit {
       this.amountOfPayment = numberOfDays * this.cars.dailyPrice;
       if (this.amountOfPayment <= 0) {
         this.router.navigate(['/cars']);
-        // this.toastrService.error(
-        //   "Araç listesine yönlendiriliyorsunuz.",
-        //   "Hatalı işlem"
-        // );
+        this.toastrService.error(
+          "Hatalı İşlem gerçekleşti.",
+          "Hatalı işlem"
+        );
       }
     }
   }
   async rentACar() {
     let card: Card = {
-      nameOnTheCard: this.nameOnTheCard,
+      nameOnTheCard: this.nameOnTheCard.toUpperCase(),
       cardNumber: this.cardNumber,
       expirationDate: this.expirationDate,
       cardCvv: this.cardCvv,
@@ -89,18 +91,18 @@ export class PaymentComponent implements OnInit {
     if (this.cardExist) {
       this.card = await this.getCardByCardNumber(this.cardNumber);
       console.log(this.card);
-      // if(this.card.moneyInTheCard >= this.amountOfPayment){
-      //   this.card.moneyInTheCard = this.card.moneyInTheCard - this.amountOfPayment;
-      //   this.updateCard(card);
-      //   this.rentalService.addRental(this.rental);
-      // // this.toastrService.success('Arabayı kiraladınız.' , 'İşlem başarılı');
-      //   this.router.navigate(['/cars']);
-      // }
-      // else{
-      //   // this.toastrService.error("Kartınızda yeterli bakiye bulunmamaktadır." , "Hata");
-      // }
+      if(this.card.moneyInTheCard >=this.amountOfPayment){
+        this.card.moneyInTheCard = this.card.moneyInTheCard - this.amountOfPayment;
+        this.updateCard(card);
+        this.rentalService.addRental(this.rental);
+      this.toastrService.success('Araç kiralama işlemi başarılı.' , 'İşlem başarılı');
+        this.router.navigate(['/cars']);
+      }
+      else{
+        this.toastrService.error("Kart bakiyeniz yeterli değildir." , "Hata");
+      }
     } else {
-      // this.toastrService.error('Bankanız bilgilerinizi onaylamadı.',"Hata");
+      this.toastrService.error('Banka bilgilerinizi onaylamadı.',"Hata");
     }
   }
   async isCardExist(card: Card) {
@@ -114,6 +116,6 @@ export class PaymentComponent implements OnInit {
     this.cardService.updateCard(card);
   }
   cardNumberSplit() {
-    // document.getElementById("card-number").innerHTML = this.cardNumber.toString().replace(/\d{4}(?=.)/g, '$& ');
+    document.getElementById("card-number").innerHTML = this.cardNumber.toString().replace(/\d{4}(?=.)/g, '$& ');
   }
 }

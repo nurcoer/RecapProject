@@ -52,10 +52,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
         }
 
-        public IDataResult<Rental> GetById(int id)
+        public IDataResult<List<RentalDetailsDto>> GetByCarId(int id)
         {
 
-            return new SuccessDataResult<Rental>(_rentalDal.GetById(r => r.CarId == id), Messages.GetCarsByBrandId);
+            return new SuccessDataResult<List<RentalDetailsDto>>(_rentalDal.GetRentalDetails(r => r.CarId == id), Messages.GetCarsByBrandId);
         }
 
         public IDataResult<List<RentalDetailsDto>> GetRentalDetails()

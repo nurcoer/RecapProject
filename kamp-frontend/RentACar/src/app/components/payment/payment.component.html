@@ -38,7 +38,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <h3 class="text-center">Payment Details</h3>
-                            <div align="center">
+                            <div align-item="center">
                             <img class="img-responsive cc-img col align-self-center" id="payment" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png"> 
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         <div class="card mx-4 my-4 position-absolute bottom-90" style="width:3rem;height: 2rem; background: #cecece">
                         </div>
                         <div id="card-number" class="mt-3 position-absolute top-50 start-50 translate-middle text-nowrap">
-                          {{cardNumber ? cardNumber.toString() : ''}}</div>
+                          {{cardNumber ? cardNumber : ''}}</div>
                         <div class="card-user m-3 position-absolute bottom-0">{{nameOnTheCard  ? nameOnTheCard : 'Kart Üzerindeki İsim Soyisim'}}</div>
                         <div class="card-exp m-3 mb-0 position-absolute end-0 bottom-0 "
                           style="font-size: 14px; text-align: center;">Son Geçerlilik Tarihi <p>{{expirationDate ? expirationDate: ''}}</p>
@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                               <label for="cc-name">Name on card</label>
-                              <input [(ngModel)]="nameOnTheCard" type="text" class="form-control" id="cc-name" placeholder="" required>
+                              <input [(ngModel)]="nameOnTheCard "  type="text" class="form-control" id="cc-name" placeholder="" required>
                               <small class="text-muted">Full name as displayed on card</small>
                               <div class="invalid-feedback">
                                 Name on card is required
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                               <label for="cc-number">Credit card number</label>
-                              <input [(ngModel)]="cardNumber" title="Must contain at least 8 or more characters" type="text" class="form-control" id="cc-number"  pattern="/\d{4}(?=.)/g, '$& '" onKeyPress="if(this.value.length>=16) return false; "placeholder="**** **** **** ****" required (input)="cardNumberSplit()">
+                              <input [(ngModel)]="cardNumber" title="Must contain at least 8 or more characters" type="text" class="form-control" id="cc-number"   pattern="[0-9]{16}" onKeyPress="if(this.value.length>=16) return false; "placeholder="**** **** **** ****" required (input)="cardNumberSplit()">
                               <div class="invalid-feedback">
                                 Credit card number is required
                               </div>

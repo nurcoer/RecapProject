@@ -73,10 +73,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("GetById")]
-        public IActionResult GetById(int id)
+        [HttpGet("GetByCarId")]
+        public IActionResult GetByCarId(int id)
         {
-            var result = _rentalService.GetById(id);
+            var result = _rentalService.GetByCarId(id);
             if (result.Success)
             {
                 return Ok(result);

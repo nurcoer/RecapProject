@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
@@ -18,6 +19,9 @@ import { CarsFiltersComponent } from './components/cars-filters/cars-filters.com
 import { FilterCarWithBrandAndColorPipe } from './pipes/filter-car-with-brand-and-color.pipe';
 import { RentalComponent } from './components/rental/rental.component';
 import { PaymentComponent } from './components/payment/payment.component';
+
+import{ToastrModule} from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -40,10 +44,13 @@ import { PaymentComponent } from './components/payment/payment.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
   ],
   providers: [
-    DatePipe,
+    DatePipe, 
   ],
   bootstrap: [AppComponent]
 })

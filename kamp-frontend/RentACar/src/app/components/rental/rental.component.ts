@@ -5,7 +5,7 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
-
+import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer/customer';
 import { Rental } from 'src/app/models/rental/rental';
 
@@ -30,11 +30,14 @@ export class RentalComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private customerService: CustomerService,
+    private rentalService:RentalService,
     private datePipe: DatePipe,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
 this.getCustomer();
+this.getRentalCarDate();
   }
   getRentMinDate() {
     this.minDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
@@ -72,25 +75,24 @@ this.getCustomer();
       rentDate : this.rentDate,
       returnDate : this.returnDate,
     };
-    if (MyRental.customerId == undefined || MyRental.rentDate == undefined) {
-      //this.toastrService.error("Eksik bilgi girdiniz","Bilgilerinizi kontrol edin")
+    if (!MyRental.customerId || !MyRental.rentDate) {
+      this.toastrService.error("Bilgilerinizi kontrol edin","Bilgilerinizi kontrol edin")
     } else{
-      this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
-      // this.toastrService.info(
-      //   'Ödeme sayfasına yönlendiriliyorsunuz...',
-      //   'Ödeme İşlemleri'
-      // );
+       this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
     }
-  }
-  setCustomerId(customerId: string) {
-    this.customerId = +customerId;
-    console.log(this.customerId);
   }
   getCustomer() {
     this.customerService.getCustomer().subscribe((response) => {
       this.customers = response.data;
-      console.log(response.data);
+      
     });
+  }
+  getRentalCarDate(){
+    this.rentalService.getRentalById(this.car.carId).subscribe((response)=>{
+      console.log(response);
+      //bu araca ait rental bilgileri rental db den gelcek 
+      //return date başlangıç getRentMinDate() de min değer bu radaki tarihten başlayacak
+    })
   }
 
 }

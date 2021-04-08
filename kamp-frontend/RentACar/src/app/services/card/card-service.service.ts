@@ -16,7 +16,6 @@ export class CardService {
 
   isCardExist(card : Card):Observable<ResponseModel>{
     let newPath = this.apiUrl + "cards/iscardexist";
-    console.log(card);
     return this.httpClient.post<ResponseModel>(newPath,card);
   };
   getCardByNumber(cardNumber : string) : Observable<ListResponseModel<Card>>{
