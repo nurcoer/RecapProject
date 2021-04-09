@@ -4,6 +4,7 @@ import { Rental } from 'src/app/models/rental/rental';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { ResponseModel } from 'src/app/models/responseModel';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +13,10 @@ import { Observable } from 'rxjs';
 export class RentalService {
   apiUrl = 'http://localhost:50906/api/rentals/';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private toastrService: ToastrService
+  ) {}
 
   getRental(): Observable<ListResponseModel<Rental>> {
     let newPath = this.apiUrl + 'GetRentalDetails';
@@ -23,13 +27,17 @@ export class RentalService {
     let newPath = this.apiUrl + 'GetByCarId?id=' + carId;
     return this.httpClient.get<SingleResponseModel<Rental>>(newPath);
   }
-   addRental(rental:Rental){
-    let newPath = this.apiUrl + 'add'
-    this.httpClient.post(newPath,rental).subscribe()
-  }
-
-  payRental(rental:Rental, amount:number){
+  addRental(rental: Rental) : Observable<ResponseModel> {
     let newPath = this.apiUrl + 'add';
-    return this.httpClient.post<ResponseModel>(newPath,{payment:{amount:amount},rental:{rental}})
+    return this.httpClient.post<ResponseModel>(newPath, rental);
+  }
+  
+
+  payRental(rental: Rental, amount: number):Observable<ResponseModel>  {
+    let newPath = this.apiUrl + 'add';
+    return this.httpClient.post<ResponseModel>(newPath, {
+      payment: { amount: amount },
+      rental: { rental },
+    });
   }
 }

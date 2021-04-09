@@ -5,6 +5,33 @@
     object-fit: scale-down;
 }
 .carcard{
-    margin-top : 10px;
+    margin-top : 20px;
 
 }
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    margin-left: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+    
+  }
+  
+  .button1 {
+    background-color: rgb(39, 38, 38); 
+    color: rgb(248, 244, 244); 
+    border: 2px solid #747774;
+  }
+  
+  .button1:hover {
+    background-color: #a0b6a0;
+    color: white;
+  }

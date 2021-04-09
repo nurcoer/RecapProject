@@ -1,0 +1,20 @@
+  
+<div class="card">
+  <div class="card-header">
+    {{operationType === 'Add'?'Yeni Color Ekleyiniz.':"Color'ı Güncelleyiniz." }}
+  </div>
+  <div class="card-body">
+      <form [formGroup]="colorForm"> 
+          <div class="mb-3">
+            <label for="colorName" class="form-label">Color Name</label>
+            <input type="text" 
+            formControlName="colorName"
+            placeholder="Color name"
+            class="form-control" 
+            id="colorName" 
+            aria-describedby="nameHelp">
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="currentColorId? updateColor():addColor()">{{currentColorId? 'Güncelle':'Ekle'}}</button>
+        </form>
+  </div>
+</div>

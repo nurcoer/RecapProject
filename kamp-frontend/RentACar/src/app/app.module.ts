@@ -21,6 +21,9 @@ import { RentalComponent } from './components/rental/rental.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 import{ToastrModule} from 'ngx-toastr';
+import { AddCarComponent } from './components/add-car/add-car.component';
+import { AddColorComponent } from './components/add-color/add-color.component';
+import { AddBrandComponent } from './components/add-brand/add-brand.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import{ToastrModule} from 'ngx-toastr';
     CarsFiltersComponent,
     FilterCarWithBrandAndColorPipe,
     RentalComponent,
-    PaymentComponent
+    PaymentComponent,
+    AddCarComponent,
+    AddColorComponent,
+    AddBrandComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ namespace Business.Concrete
         {
             _brandDal = brandDal;
         }
-        [SecuredOperation("product.add,admin")]
+        ///[SecuredOperation("product.add,admin")]
         [CacheRemoveAspect("IBrandService.Get")]
         [TransactionScopeAspect]
         public IResult Add(Brand brand)
@@ -41,13 +41,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
 
-        [SecuredOperation("product.add,admin")]
+        //[SecuredOperation("product.add,admin")]
         [CacheRemoveAspect("IBrandService.Get")]
         [TransactionScopeAspect]
         public IResult Update(Brand brand)
         {
             _brandDal.Update(brand);
             return new SuccessResult(Messages.ProductUpdated);
+        }
+
+        public IDataResult<Brand> GetById(int id)
+        {
+            return new SuccessDataResult<Brand>(_brandDal.GetById(c => c.BrandId == id));
         }
     }
 }

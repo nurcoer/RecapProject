@@ -1,0 +1,20 @@
+  
+<div class="card">
+    <div class="card-header">
+      {{operationType === 'Add'?'Yeni Brand Ekleyiniz.':"Brand'i Güncelleyiniz." }}
+    </div>
+    <div class="card-body">
+        <form [formGroup]="brandForm"> 
+            <div class="mb-3">
+              <label for="brandName" class="form-label">Brand Name</label>
+              <input type="text" 
+              formControlName="brandName"
+              placeholder="Brand name"
+              class="form-control" 
+              id="brandName" 
+              aria-describedby="nameHelp">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="currentBrandId? updateBrand():addBrand()">{{currentBrandId? 'Güncelle':'Ekle'}}</button>
+          </form>
+    </div>
+  </div>

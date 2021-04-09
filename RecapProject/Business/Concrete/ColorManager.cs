@@ -18,7 +18,7 @@ namespace Business.Concrete
         {
             _colorDal = colorDal;
         }
-        [SecuredOperation("admin")]
+        //[SecuredOperation("admin")]
         [CacheRemoveAspect("IColorService.Get")]
         [TransactionScopeAspect]
         public IResult Add(Color color)
@@ -39,13 +39,18 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
         }
-        [SecuredOperation("admin")]
+        //[SecuredOperation("admin")]
         [CacheRemoveAspect("IColorService.Get")]
         [TransactionScopeAspect]
         public IResult Update(Color color)
         {
             _colorDal.Update(color);
             return new SuccessResult(Messages.ProductUpdated);
+        }
+
+        public IDataResult<Color> GetById(int id)
+        {
+            return new SuccessDataResult<Color>(_colorDal.GetById(c => c.ColorId == id));
         }
     }
 }

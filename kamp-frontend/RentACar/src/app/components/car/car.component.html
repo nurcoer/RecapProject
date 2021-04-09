@@ -6,21 +6,25 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 <div *ngIf="dataLoaded == true">
+  
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div
       class="row g-0 carcard"
-      *ngFor="let car of carDetails | carFilter:filterText  | filterCarWithBrandAndColor:filterBrand:filterColor"
+      *ngFor="
+        let car of carDetails
+          | carFilter: filterText
+          | filterCarWithBrandAndColor: filterBrand:filterColor
+      "
       routerLink="/cars/carDetails/{{ car.carId }}"
     >
-   
       <div class="col-md-4">
         <img
           class="carImage d-block w-100"
-          src="{{ imageBasePath }}{{car?car.imagePath:'default.jpg'}}"
+          src="{{ imageBasePath }}{{ car ? car.imagePath : 'default.jpg' }}"
           alt="Resim bulunamadı"
         />
       </div>
-     
+
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{ car.carName }}</h5>
@@ -30,7 +34,7 @@
           <p class="card-text">Günlük Ücreti: {{ car.dailyPrice }}</p>
         </div>
       </div>
+      <button class="button button1" routerLink="/caroperations/{{car.carId}}">Arabayı Güncelle</button>
     </div>
-    
   </div>
 </div>
