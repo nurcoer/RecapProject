@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IhKrlmS2h8lG38rhod0Oazcyl+7THGDAIaWOWPL4ZKzwVj3ZkBQdpjLIWBi0KcgZ8QTYmi3CdW4MaDCqsqWc1g==",
+  "dgSpecHash": "Mwz8MQowh7+YOvdGUMOZ0WSyP4FBQ7x/Ug+GeAqzSJkIcsiypDh1mRL9HtU4+XWqSI5QtpRSZiWOtqPuZQDG7w==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\ConsoleUI\\ConsoleUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

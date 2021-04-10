@@ -61,6 +61,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyuser")]
+        public IActionResult GetByUser(int  userId)
+        {
+            var result = _userService.GetByUser(userId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }

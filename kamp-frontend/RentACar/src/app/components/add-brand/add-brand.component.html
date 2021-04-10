@@ -1,7 +1,12 @@
   
-<div class="card">
+<div class="card " style="border-radius: 18px; color: darkgreen; border-color: darkolivegreen">
     <div class="card-header">
-      {{operationType === 'Add'?'Yeni Brand Ekleyiniz.':"Brand'i Güncelleyiniz." }}
+      <h5 style="color: darkgreen" class="title font-weight-bold">
+        
+          {{operationType === 'Add'?'Yeni Brand Ekleyiniz.':"Brand'i Güncelleyiniz." }}
+        
+      </h5>
+      
     </div>
     <div class="card-body">
         <form [formGroup]="brandForm"> 
@@ -14,7 +19,7 @@
               id="brandName" 
               aria-describedby="nameHelp">
             </div>
-            <button type="submit" class="btn btn-primary" (click)="currentBrandId? updateBrand():addBrand()">{{currentBrandId? 'Güncelle':'Ekle'}}</button>
+            <button type="submit" class="btn btn-success" (click)="currentBrandId? updateBrand():addBrand()">{{currentBrandId? 'Güncelle':'Ekle'}}</button>
           </form>
     </div>
   </div>

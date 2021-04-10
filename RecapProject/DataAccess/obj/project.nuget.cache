@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9GhsvFhuR+ONW9Xre/s50bu7A/B9UuN8Veas5A0nNEIfpmJ/2dLU17Nk+Oz97HcutucibFnWcYqPKgLTx51EmQ==",
+  "dgSpecHash": "uCrc7peOSCLxgOcyr/e54sggZJ+guqtyZoKxq+KCYuC6fdxaUlfNG2TwL/6vCsFNs4Qt6Oot7SS76B8gvHB9Kg==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",

@@ -29,7 +29,7 @@ export class BrandComponent implements OnInit {
 
   getCurrentBrandClass(brand: Brand) {
     if (brand == this.currentBrand) {
-      return 'list-group-item active';
+      return 'list-group-item black';
     } else {
       return 'list-group-item ';
     }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
@@ -21,9 +21,13 @@ import { RentalComponent } from './components/rental/rental.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 import{ToastrModule} from 'ngx-toastr';
+import {AuthInterceptor} from './interceptors/auth.interceptor';
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { AddColorComponent } from './components/add-color/add-color.component';
 import { AddBrandComponent } from './components/add-brand/add-brand.component';
+import { LoginComponent } from './components/authOperations/login/login.component';
+import { RegisterComponent } from './components/authOperations/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -42,7 +46,10 @@ import { AddBrandComponent } from './components/add-brand/add-brand.component';
     PaymentComponent,
     AddCarComponent,
     AddColorComponent,
-    AddBrandComponent
+    AddBrandComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,7 @@ import { AddBrandComponent } from './components/add-brand/add-brand.component';
   ],
   providers: [
     DatePipe, 
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
   ],
   bootstrap: [AppComponent]
 })

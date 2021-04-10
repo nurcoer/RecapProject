@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ybhweVPzdbZ9H9hJzTWp1MdwcoLHaT1uUKNLR56pLKC5m7KlOvB94GgH1jiTBFNg5TLkzZ+YOBoq4SFAgE4xng==",
+  "dgSpecHash": "Kl1JjUtz9rbqC9hkXqntdkFuxT0ThPbcobZxpHIac6H/8pTwlC8Zkxa2w5gqY+5MiEJR8QORx/pU18wa7nxHqw==",
   "success": true,
-  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\RecapProject\\RecapProject\\Core\\Core.csproj",
+  "projectFilePath": "D:\\asp.net\\Yazılım Geliştirici Yetiştirme Kampı\\ReCapProject\\RecapProject\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",

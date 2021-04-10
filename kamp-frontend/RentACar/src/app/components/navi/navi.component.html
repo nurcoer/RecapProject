@@ -1,21 +1,76 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Rent A Car</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" routerLink="">Rent A Car</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExample05"
+    aria-controls="navbarsExample05"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse " id="navbarsExample05">
+  <div class="collapse navbar-collapse" id="navbarsExample05" >
+    
     <div class="navbar-nav me-auto mb-2 mb-lg-0">
-     
-    </div>
+      <button class="button button1" routerLink="/brandoperations">
+        Brand Ekle
+      </button>
+      <button class="button button1" routerLink="/coloroperations">
+        Color Ekle
+      </button>
+      <button class="button button1" routerLink="/caroperations">
+        Car Ekle
+      </button>
+  </div>
     <form for="filterText" class="form-inline my-2 my-md-0">
-      <input class="form-control"   [(ngModel)]="filterText"  name="filterText"  id="filterText" type="text" placeholder="Search">
-      
+      <input
+        class="form-control"
+        [(ngModel)]="filterText"
+        name="filterText"
+        id="filterText"
+        type="text"
+        placeholder="Search"
+      />
     </form>
-    <button class="button button1" routerLink="/cars/{{filterText}}">Ara</button>
-    <button class="button button1" routerLink="/brandoperations">Brand Ekle</button>
-    <button class="button button1" routerLink="/coloroperations">Color Ekle</button>
-    <button class="button button1" routerLink="/caroperations">Car Ekle</button>
-    <button class="button button1 ">Giriş yap</button>
+    <button class="button button1" routerLink="/cars/{{ filterText }}">
+      Ara
+    </button>
+
+
+    <div *ngIf="!isAuthenticated()">
+      <button class="button button1" routerLink="/login">Giriş yap</button>
+      <button class="button button1" routerLink="/register">Kayıt ol</button>
+  </div>
+    <div *ngIf="isAuthenticated()">
+      <div class="nav-item dropdown">
+        <a
+          style="color: whitesmoke"
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i
+            style="margin-right: 10px; font-size: 1.2rem"
+            class="fas fa-user-circle"
+          ></i
+          ><strong *ngIf="user"
+            >{{ user.firstName }} {{ user.lastName }}</strong
+          >
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" routerLink="profile"
+              ><i style="margin-right: 10px" class="fas fa-users-cog"></i
+              >Profile</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>

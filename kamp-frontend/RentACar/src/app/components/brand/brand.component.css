@@ -23,3 +23,12 @@
     background-color: #a0b6a0;
     color: white;
   }
+
+  .black{
+    background-color:  rgb(39, 38, 38);
+    color: white;
+  }
+  .bg-black{
+    background-color: #7f837f;
+    color: white;
+  }

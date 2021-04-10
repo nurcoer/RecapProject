@@ -1,8 +1,10 @@
   
-<div class="card">
+<div class="card" style="border-radius: 18px; color: darkgreen; border-color: darkolivegreen">
   <div class="card-header">
-    {{operationType === 'Add'?'Yeni Color Ekleyiniz.':"Color'ı Güncelleyiniz." }}
-  </div>
+    <h5 style="color: darkgreen" class="title font-weight-bold">
+      {{operationType === 'Add'?'Yeni Color Ekleyiniz.':"Color'ı Güncelleyiniz." }}
+    </h5>
+    </div>
   <div class="card-body">
       <form [formGroup]="colorForm"> 
           <div class="mb-3">
@@ -14,7 +16,7 @@
             id="colorName" 
             aria-describedby="nameHelp">
           </div>
-          <button type="submit" class="btn btn-primary" (click)="currentColorId? updateColor():addColor()">{{currentColorId? 'Güncelle':'Ekle'}}</button>
+          <button type="submit" class="btn btn btn-success" (click)="currentColorId? updateColor():addColor()">{{currentColorId? 'Güncelle':'Ekle'}}</button>
         </form>
   </div>
 </div>

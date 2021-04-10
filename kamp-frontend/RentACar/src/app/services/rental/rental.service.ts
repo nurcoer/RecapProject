@@ -4,7 +4,6 @@ import { Rental } from 'src/app/models/rental/rental';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { ResponseModel } from 'src/app/models/responseModel';
-import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,8 +13,7 @@ export class RentalService {
   apiUrl = 'http://localhost:50906/api/rentals/';
 
   constructor(
-    private httpClient: HttpClient,
-    private toastrService: ToastrService
+    private httpClient: HttpClient
   ) {}
 
   getRental(): Observable<ListResponseModel<Rental>> {

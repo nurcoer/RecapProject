@@ -28,7 +28,7 @@ export class ColorComponent implements OnInit {
 
   getCurrentColorClass(color:Color){
     if (color==this.currentColor) {
-      return "list-group-item active" 
+      return "list-group-item black" 
     }else{
       return "list-group-item " 
     }

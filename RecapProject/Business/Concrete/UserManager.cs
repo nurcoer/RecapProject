@@ -20,7 +20,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        [SecuredOperation("admin, editor")]
+        //[SecuredOperation("admin, editor")]
         [CacheRemoveAspect("IUserService.Get")]
         [TransactionScopeAspect]
         public IResult Add(User user)
@@ -56,6 +56,10 @@ namespace Business.Concrete
         public User GetByMail(string email)
         {
             return _userDal.GetById(u => u.Email == email);
+        }
+        public IDataResult<User> GetByUser(int  userId)
+        {
+            return new SuccessDataResult<User>(_userDal.GetById(u => u.Id== userId));
         }
     }
 }

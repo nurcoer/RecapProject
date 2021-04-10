@@ -1,0 +1,51 @@
+<body class="text-center">
+  <main class="form-signin">
+    <form [formGroup]='loginForm'>
+      <img
+        class="mb-4 loginimg"
+        src="https://i.pinimg.com/originals/ef/1c/db/ef1cdbcd414f7af89818e0fa1362ec93.jpg"
+        alt=""
+        width="72"
+        height="57"
+      />
+      <h1 class="h3 mb-3 fw-normal">Lütfen Giriş Yapın</h1>
+
+      <div class="form-floating">
+        <input
+        formControlName='email'
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input
+        formControlName='password'
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Şifre</label>
+      </div>
+
+      <!-- <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div> -->
+      <button 
+      (click)="login()"
+      class="w-100 btn btn-lg button button1" type="submit">
+        Giriş Yap
+      </button>
+      <div class="checkbox mb-3">
+        <label>
+          <p routerLink="/register"> Kayıt Ol </p>
+        </label>
+      </div>
+    </form>
+  </main>
+</body>
