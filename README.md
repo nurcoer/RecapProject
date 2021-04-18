@@ -3,6 +3,7 @@
 ## A basic rent a car project
 
   # Backend
+  
     - EF applied.
     
     - AOP Architecture applied.
@@ -25,6 +26,7 @@
    
    
   # Project Operations
+  
     - CRUD operations for Cars, Colors, Brands, Users, Customers, Cards and Rentals.
 
     - Authorization Added.
@@ -33,5 +35,5 @@
 
     - Rental transactions.
 
-    - Security And Result Operaitions
+    - Security And Result Operations
     
