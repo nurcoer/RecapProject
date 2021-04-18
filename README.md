@@ -37,3 +37,8 @@
 
     - Security And Result Operations
     
+   
+ # The rules that I tried to follow rules when writing this project
+   - SOLID Principles,
+   - Clean Coding,
+   - DRY (Don't Repeat Yourself)
